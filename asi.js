@@ -12,7 +12,6 @@ fetch('https://covid19asi.saglik.gov.tr').then(function (response) {
     var birinci = [...veri].map(m=>m.dataset.birinciDoz);
     var ikinci = [...veri].map(m=>m.dataset.ikinciDoz);
     var toplam = [...veri].map(m=>m.dataset.toplam);
-    console.log(JsonData)
     var tr;
         for (var i = 1; i < 82; i++) {
             tr = $('<tr/>');
