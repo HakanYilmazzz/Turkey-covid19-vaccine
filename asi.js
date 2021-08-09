@@ -1,5 +1,4 @@
-
-fetch('https://covid19asi.saglik.gov.tr').then(function (response) {
+fetch('https://cors-anywhere.herokuapp.com/https://covid19asi.saglik.gov.tr').then(function (response) {
 	return response.text();
 }).then(function (html) {
 	var parser = new DOMParser();
@@ -13,6 +12,7 @@ fetch('https://covid19asi.saglik.gov.tr').then(function (response) {
     var ikinci = [...veri].map(m=>m.dataset.ikinciDoz);
     var toplam = [...veri].map(m=>m.dataset.toplam);
     var tr;
+    
         for (var i = 1; i < 82; i++) {
             tr = $('<tr/>');
             tr.append("<td>" + i + "</td>");
@@ -24,6 +24,7 @@ fetch('https://covid19asi.saglik.gov.tr').then(function (response) {
             tr.append("<td>" + ((Number(JsonData[i].toplam.split('.').join('')) - Number(JsonData[i].birinciDoz.split('.').join('')) - Number(JsonData[i].ikinciDoz.split('.').join(''))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')) + "</td>");
             $('#myTable').append(tr);
         }
+
         var count=1;
         for (var i = 83; i < 164; i++) {
             tr = $('<tr/>');
