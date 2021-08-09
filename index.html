@@ -7,21 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="icon" href="https://www.cmu.edu/coronavirus/assets/images/icon-line-syringe.png" type="image/icon type">
     <link rel="stylesheet" href="./sort.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <title>Asilandik.me</title>
 </head>
 
 <body>
     <div id="app">
-            <form id="content">
-                <input type="text" name="input" class="input" id="myInput" onkeyup="myFunction()" onfocus="this.placeholder = 'Sehir Ara'"
-                onblur="this.placeholder = ''">
-                <button type="reset" class="search" id="search-btn"></button>
-              </form>
+        <form id="content">
+            <input type="text" name="input" class="input" id="myInput" onkeyup="myFunction()"
+                onfocus="this.placeholder = 'Sehir Ara'" onblur="this.placeholder = ''">
+            <button type="reset" class="search" id="search-btn"></button>
+        </form>
         <div style="display: flex;flex-direction: row;width: 100%;margin-top: 5%;">
             <div class="left">
-                <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Sayısı</pan></h1>
+                <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Sayısı
+                        </pan>
+                </h1>
                 <table id="myTable" class="sortable" cellpadding="0" cellspacing="0">
                     <thead class="table-header">
                         <tr>
@@ -37,7 +41,9 @@
                 </table>
             </div>
             <div class="right">
-                <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Oranı</pan></h1>
+                <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Oranı
+                        </pan>
+                </h1>
                 <table id="myTable2" class="sortable" cellpadding="0" cellspacing="0">
                     <thead class="table-header">
                         <tr>
@@ -75,14 +81,14 @@
         }
     }
     const input = document.getElementById("myInput");
-const searchBtn = document.getElementById("search-btn");
+    const searchBtn = document.getElementById("search-btn");
 
-const expand = () => {
-  searchBtn.classList.toggle("close");
-  input.classList.toggle("square");
-};
+    const expand = () => {
+        searchBtn.classList.toggle("close");
+        input.classList.toggle("square");
+    };
 
-searchBtn.addEventListener("click", expand);
+    searchBtn.addEventListener("click", expand);
 </script>
 
 </html>
