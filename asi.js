@@ -1,4 +1,7 @@
-fetch('https://cors-anywhere.herokuapp.com/https://covid19asi.saglik.gov.tr').then(function (response) {
+fetch('https://cors.bridged.cc/https://covid19asi.saglik.gov.tr' , {
+    method: "GET",
+    credentials: "same-origin"
+}).then(function (response) {
 	return response.text();
 }).then(function (html) {
 	var parser = new DOMParser();
@@ -12,8 +15,17 @@ fetch('https://cors-anywhere.herokuapp.com/https://covid19asi.saglik.gov.tr').th
     var ikinci = [...veri].map(m=>m.dataset.ikinciDoz);
     var toplam = [...veri].map(m=>m.dataset.toplam);
     var tr;
-    
+    GenelToplam=0;
+    fdoz=0;
+    sdoz=0;
+    tdoz=0;
+    console.log(JsonData)
         for (var i = 1; i < 82; i++) {
+            GenelToplam=Number(JsonData[i].toplam.split('.').join(''))+GenelToplam;
+            fdoz = Number(JsonData[i].birinciDoz.split('.').join(''))+fdoz;
+            sdoz = Number(JsonData[i].ikinciDoz.split('.').join(''))+sdoz;
+            tdoz = (Number(JsonData[i].toplam.split('.').join('')) - Number(JsonData[i].birinciDoz.split('.').join('')) - Number(JsonData[i].ikinciDoz.split('.').join(''))) + tdoz;
+
             tr = $('<tr/>');
             tr.append("<td>" + i + "</td>");
             tr.append("<td>" + JsonData[i].adi + "</td>");
@@ -24,6 +36,11 @@ fetch('https://cors-anywhere.herokuapp.com/https://covid19asi.saglik.gov.tr').th
             tr.append("<td>" + ((Number(JsonData[i].toplam.split('.').join('')) - Number(JsonData[i].birinciDoz.split('.').join('')) - Number(JsonData[i].ikinciDoz.split('.').join(''))).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')) + "</td>");
             $('#myTable').append(tr);
         }
+
+            document.getElementById("toplam").innerText = GenelToplam.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+            document.getElementById("fdoz").innerText = fdoz.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+            document.getElementById("sdoz").innerText = sdoz.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+            document.getElementById("tdoz").innerText = tdoz.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 
         var count=1;
         for (var i = 83; i < 164; i++) {
