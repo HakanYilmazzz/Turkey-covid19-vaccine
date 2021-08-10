@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="icon" href="https://www.cmu.edu/coronavirus/assets/images/icon-line-syringe.png" type="image/icon type">
-    <link rel="stylesheet" href="./sort.css">
+    <link rel="stylesheet" href="./asi.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -23,6 +23,8 @@
                 onfocus="this.placeholder = 'Sehir Ara'" onblur="this.placeholder = ''">
             <button type="reset" class="search" id="search-btn"></button>
         </form>
+        
+
         <div class="text">
             <div class="veri">
                 <div style="flex-direction: column;border-right: 1px solid blue;">
@@ -49,7 +51,14 @@
             </div>
 
         </div>
-        <div style="display: flex;flex-direction: row;width: 100%;margin-top: 15%;">
+        <div class="prog">
+            <h3>Türkiye Geneli Aşılama Oranı<sup style="font-size: 10px;">  2 Doz aşılanmış kişiler</sup></h3>
+            <div class="progress1">
+                <div class="progress-value1" id="progress-value1"><span id="genelOran"></span></div>
+            </div>
+
+        </div>
+        <div style="display: flex;flex-direction: row;width: 100%;margin-top: 5%;">
             <div class="left">
                 <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Sayısı
                         </pan>
@@ -133,6 +142,7 @@
             scrollTop: 0
         }, '300');
     });
+
 </script>
 
 </html>
