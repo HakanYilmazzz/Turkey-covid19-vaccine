@@ -5,7 +5,7 @@ Türkiye aşılama son durumu hakkında bilgi
 - [X] Alfabetik veya sayıya göre sıralama yapılacak.
 
 - [ ] 1. Doza göre sıralamadaki hata giderilecek.
-- [ ] Aşılamanın nüfusa oranı da eklenecek.
+- [X] Aşılamanın nüfusa oranı da eklenecek.
 
 # Ekran Görüntüsü
 ![Title](https://github.com/HakanYilmazzz/Turkey-covid19-vaccine/blob/main/asi.png)
