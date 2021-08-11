@@ -7,13 +7,10 @@ fetch('https://cors.bridged.cc/https://covid19asi.saglik.gov.tr' , {
 	var parser = new DOMParser();
 	var doc = parser.parseFromString(html, 'text/html');
     const veri = doc.getElementsByTagName('g');
+
     var dataset = [...veri].map(m=>m.dataset);
     JsonData = JSON.parse(JSON.stringify(dataset))
     JsonData={...JsonData};
-    var iller = [...veri].map(m=>m.dataset.adi);
-    var birinci = [...veri].map(m=>m.dataset.birinciDoz);
-    var ikinci = [...veri].map(m=>m.dataset.ikinciDoz);
-    var toplam = [...veri].map(m=>m.dataset.toplam);
     var tr;
     GenelToplam=0;
     fdoz=0;
@@ -39,11 +36,9 @@ fetch('https://cors.bridged.cc/https://covid19asi.saglik.gov.tr' , {
     document.getElementById("fdoz").innerText = fdoz.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
     document.getElementById("sdoz").innerText = sdoz.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
     document.getElementById("tdoz").innerText = tdoz.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
-
     var yuzde = ((sdoz/83614362)*100).toFixed(1);
     document.getElementById("genelOran").innerHTML = yuzde + "%";
     document.getElementById('progress-value1').style.width = yuzde+ "%";
-    
     var count=1;
     for (var i = 83; i < 164; i++) {
         tr = $('<tr/>');

@@ -5,6 +5,8 @@ body {
   line-height: 1.42em;
   color: #a7a1ae;
   background-color: #1f2739;
+  margin: 0;
+  /* overflow: hidden; Hide scrollbars */
 }
 .sortable th h1 {
   font-weight: bold;
@@ -308,7 +310,7 @@ input {
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .chart {
   background: rgba(255, 255, 255, 0.1);
@@ -321,42 +323,107 @@ input {
   height: 40px;
   width: 500px;
 }
-.prog{
+.prog {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   padding-top: 20%;
 }
 .progress1 {
-	background: rgba(0, 0, 0, 0.1);
-	justify-content: flex-start;
-	border-radius: 100px;
-	align-items: center;
-	position: relative;
-	padding: 0 5px;
-	display: flex;
-	height: 40px;
-	width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 99%;
 }
 
 .progress-value1 {
-	animation: load 3s normal forwards;
-	box-shadow: 0 10px 40px -10px #fff;
-	border-radius: 100px;
-	background: #e03c83;
-	height: 30px;
-	width: 0;
+  animation: load 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #e03c83;
+  height: 30px;
+  width: 0;
 }
 
 .progress-value1 span {
-	color: #fff;
-	font-size: 14px;
-	text-align: center;
-	display: block;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  display: block;
 }
 
 @keyframes load {
-	0% {
-		width: 0;
-	}
+  0% {
+    width: 0;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 15px;
+}
+html::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+  border-radius: 25px;
+}
+html::-webkit-scrollbar {
+  width: 15px;
+}
+html::-webkit-scrollbar-track {
+  background: rgb(179, 177, 177);
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb {
+  background: #1f2739;
+  border-radius: 10px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: #1f2739;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background: #1f2739;
+  border-radius: 10px;
+}
+
+html::-webkit-scrollbar {
+  width: 15px;
+}
+html::-webkit-scrollbar-track {
+  background-image: repeating-linear-gradient(
+    45deg,
+    red 0,
+    red 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 10px 10px;
+}
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 5px white;
+}
+html::-webkit-scrollbar {
+  width: 12px;
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(7, 0, 211, 1) 100%
+  );
+}
+html::-webkit-scrollbar-thumb {
+  background: transparent;
+  box-shadow: 0px 0px 0px 100vh #1f2739;
 }
