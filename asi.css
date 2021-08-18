@@ -45,7 +45,14 @@ h2 a {
 .yellow {
   color: #fff842;
 }
-
+.framee{
+  width: 20%;
+  height: 100px;
+  background-color: red;
+  display: flex;
+  top: 5px;
+  left: 10px;
+}
 .sortable td {
   font-weight: normal;
   font-size: 1em;
@@ -62,7 +69,10 @@ h2 a {
   display: table;
   padding: 0 0 8em 0;
 }
-
+.test{
+  background-color: red;
+  top:5%;
+}
 .sortable td,
 .sortable th {
   padding-bottom: 2%;
@@ -300,6 +310,26 @@ input {
   text-align: center;
   top: 15%;
 }
+.text2 {
+  display: flex;
+  position: absolute;
+  width: 98%;
+  height: 15%;
+  align-items: center;
+  text-align: center;
+  top: 15%;
+  left: 2%;
+}
+.text3 {
+  display: flex;
+  position: absolute;
+  width: 99%;
+  height: 15%;
+  align-items: center;
+  text-align: center;
+  top: 5%;
+  left: 1%;
+}
 .veri {
   padding: 1%;
   flex-direction: row;
@@ -311,6 +341,21 @@ input {
   justify-content: center;
   text-align: center;
   border-radius: 10px;
+}
+.veri2 {
+  padding: 1%;
+  flex-direction: column;
+  background-color: white;
+  display: flex;
+  position: absolute;
+  /* width: 40%; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
+.data{
+  background-color: grey;
 }
 .chart {
   background: rgba(255, 255, 255, 0.1);

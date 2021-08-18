@@ -23,35 +23,58 @@
                 onfocus="this.placeholder = 'Sehir Ara'" onblur="this.placeholder = ''">
             <button type="reset" class="search" id="search-btn"></button>
         </form>
-        
-        <div class="text">
-            <div class="veri">
-                <div style="flex-direction: column;border-right: 1px solid blue;">
-                    <span style="color:rgb(245, 17, 66);font-weight:bold">Toplam yapılan aşı sayısı</span>
-                    <hr style="width: 90%;">
-                    <span id="toplam" style="color:blue;font-weight:bold"></span>
-                </div>
-                <div style="flex-direction: column;border-right: 1px solid blue;">
-                    <span style="color:rgb(245, 17, 66);font-weight:bold">1. Doz uygulanan kişi sayısı</span>
-                    <hr style="width: 90%;">
-                    <span id="fdoz" style="color:blue;font-weight:bold"></span>
-                </div>
-                <div style="flex-direction: column;border-right: 1px solid blue;">
-                    <span style="color:rgb(245, 17, 66);font-weight:bold">2. Doz uygulanan kişi sayısı</span>
-                    <hr style="width: 90%;">
-                    <span id="sdoz" style="color:blue;font-weight:bold"></span>
-                </div>
-                <div style="flex-direction: column;">
-                    <span style="color:rgb(245, 17, 66);font-weight:bold">3. Doz uygulanan kişi sayısı</span>
-                    <hr style="width: 90%;">
-                    <span id="tdoz" style="color:blue;font-weight:bold"></span>
+        <div class="data">
+            <div class="text">
+                <div class="veri">
+                    <div style="flex-direction: column;border-right: 1px solid blue;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">Toplam yapılan aşı sayısı</span>
+                        <hr style="width: 90%;">
+                        <span id="toplam" style="color:blue;font-weight:bold"></span>
+                    </div>
+                    <div style="flex-direction: column;border-right: 1px solid blue;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">1. Doz uygulanan kişi sayısı</span>
+                        <hr style="width: 90%;">
+                        <span id="fdoz" style="color:blue;font-weight:bold"></span>
+                    </div>
+                    <div style="flex-direction: column;border-right: 1px solid blue;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">2. Doz uygulanan kişi sayısı</span>
+                        <hr style="width: 90%;">
+                        <span id="sdoz" style="color:blue;font-weight:bold"></span>
+                    </div>
+                    <div style="flex-direction: column;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">3. Doz uygulanan kişi sayısı</span>
+                        <hr style="width: 90%;">
+                        <span id="tdoz" style="color:blue;font-weight:bold"></span>
+                    </div>
+
                 </div>
 
             </div>
-
+            <div class="text3">
+                <span style="font-weight:bold">Güncelleme Tarihi: </span>
+                <span id="tarih" style="font-weight:bold"> </span>
+            </div>
+            <div class="text2">
+                <div class="veri2">
+                    <div style="flex-direction: column;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">Test Sayısı:</span>
+                        <span id="test" style="color:blue;font-weight:bold"></span>
+                        <hr style="width: 90%;">
+                    </div>
+                    <div style="flex-direction: column;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">Vaka Sayısı:</span>
+                        <span id="poz" style="color:blue;font-weight:bold"></span>
+                        <hr style="width: 90%;">
+                    </div>
+                    <div style="flex-direction: column;">
+                        <span style="color:rgb(245, 17, 66);font-weight:bold">Ölüm Sayısı: </span>
+                        <span id="dea" style="color:blue;font-weight:bold"></span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="prog">
-            <h3>Türkiye Geneli Aşılama Oranı<sup style="font-size: 10px;">  2 Doz aşılanmış kişiler</sup></h3>
+            <h3>Türkiye Geneli Aşılama Oranı<sup style="font-size: 10px;"> 2 Doz aşılanmış kişiler</sup></h3>
             <div class="progress1">
                 <div class="progress-value1" id="progress-value1"><span id="genelOran"></span></div>
             </div>
