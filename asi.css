@@ -6,7 +6,6 @@ body {
   color: #a7a1ae;
   background-color: #1f2739;
   margin: 0;
-  /* overflow: hidden; Hide scrollbars */
 }
 .sortable th h1 {
   font-weight: bold;
@@ -331,6 +330,7 @@ input {
   left: 1%;
 }
 .veri {
+  border-top:5px solid #00FFFF;
   padding: 1%;
   flex-direction: row;
   background-color: white;
@@ -343,6 +343,7 @@ input {
   border-radius: 10px;
 }
 .veri2 {
+  border-top: 5px solid #FFA500;
   padding: 1%;
   flex-direction: column;
   background-color: white;

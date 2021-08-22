@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script async src="./asi.js"></script>
+    <script defer src="./sort.js"></script>
+    <link rel="stylesheet" href="https://mottie.github.io/tablesorter/dist/js/jquery.tablesorter.min.js">
     <title>Asilandik.me</title>
 </head>
 
@@ -77,8 +80,12 @@
             <h3>Türkiye Geneli Aşılama Oranı<sup style="font-size: 10px;"> 2 Doz aşılanmış kişiler</sup></h3>
             <div class="progress1">
                 <div class="progress-value1" id="progress-value1"><span id="genelOran"></span></div>
-            </div>
+                <span style="left:60%;display: list-item;position:absolute;color:white"></span>
 
+            </div>
+            <div style="display: flex;position:absolute;left: calc(59% - 100px)">
+                <span title="%60" style="border-bottom: 1px dashed #999;text-decoration: none;">Toplumsal Bağışıklık Yüzdesi</span>
+            </div>
         </div>
         <div style="display: flex;flex-direction: row;width: 100%;margin-top: 5%;">
             <div class="left">
@@ -118,8 +125,7 @@
     </div>
     <h2>Created with love by <a href="https://github.com/HakanYilmazzz" target="_blank">Hakan YILMAZ</a></h2>
 </body>
-<script src="./asi.js"></script>
-<script src="./sort.js"></script>
+
 <script>
     function myFunction() {
         var input, filter, table, tr, td, i, txtValue;

@@ -28,14 +28,13 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
         Number(JsonData[i].birinciDoz.split(".").join("")) -
         Number(JsonData[i].ikinciDoz.split(".").join("")) +
         tdoz;
-
+       
       tr = $("<tr/>");
       tr.append("<td>" + i + "</td>");
       tr.append("<td>" + JsonData[i].adi + "</td>");
-      tr.append("<td>" + JsonData[i].toplam + "</td>");
-      //tr.append("<td data-sort="+"{JsonData[i].toplam}"+">" + JsonData[i].toplam + "</td>");
-      tr.append("<td>" + JsonData[i].birinciDoz + "</td>");
-      tr.append("<td>" + JsonData[i].ikinciDoz + "</td>");
+      tr.append('<td id='+i+' >' + JsonData[i].toplam + "</td>");
+      tr.append('<td id='+i+' >' + JsonData[i].birinciDoz + "</td>");
+      tr.append('<td id='+i+' >' + JsonData[i].ikinciDoz + "</td>");
       tr.append(
         "<td>" +
           (
@@ -47,8 +46,13 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") +
           "</td>"
       );
+
       $("#myTable").append(tr);
-    }
+      
+      for (var j=1;j<82;j++){
+        document.getElementById(''+i+'').setAttribute('data-sort','' + JsonData[i].toplam.split(".").join("")+ '');
+      }
+      }
     document.getElementById("toplam").innerText =
       GenelToplam.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
     document.getElementById("fdoz").innerText = fdoz
@@ -64,14 +68,18 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
     document.getElementById("genelOran").innerHTML = yuzde + "%";
     document.getElementById("progress-value1").style.width = yuzde + "%";
     var count = 1;
+    
     for (var i = 83; i < 164; i++) {
       tr = $("<tr/>");
       tr.append("<td>" + count++ + "</td>");
       tr.append("<td>" + JsonData[i].adi + "</td>");
-      if (JsonData[i].yuzde > "% 75") {
+      if(JsonData[i].yuzde < "% 55"){
+        tr.append("<td style='color:#f22536'>" + JsonData[i].yuzde + "</td>");
+      }
+      else if (JsonData[i].yuzde > "% 75") {
         tr.append("<td style='color:#4dc3fa'>" + JsonData[i].yuzde + "</td>");
       } else {
-        tr.append("<td>" + JsonData[i].yuzde + "</td>");
+        tr.append("<td style='color:#ea8421'>" + JsonData[i].yuzde + "</td>");
       }
       $("#myTable2").append(tr);
     }
