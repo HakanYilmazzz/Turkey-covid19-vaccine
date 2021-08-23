@@ -10,5 +10,9 @@ Türkiye aşılama son durumu hakkında bilgi
 - [X] Günlük vaka verileri eklenecek.
 
 # Ekran Görüntüsü
+Harita
+![Title](https://github.com/HakanYilmazzz/Turkey-covid19-vaccine/blob/main/asi2.png)
+Tablo
 ![Title](https://github.com/HakanYilmazzz/Turkey-covid19-vaccine/blob/main/asi.png)
+
 
