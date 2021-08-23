@@ -44,7 +44,7 @@ h2 a {
 .yellow {
   color: #fff842;
 }
-.framee{
+.framee {
   width: 20%;
   height: 100px;
   background-color: red;
@@ -68,9 +68,9 @@ h2 a {
   display: table;
   padding: 0 0 8em 0;
 }
-.test{
+.test {
   background-color: red;
-  top:5%;
+  top: 5%;
 }
 .sortable td,
 .sortable th {
@@ -132,7 +132,7 @@ h2 a {
   height: 50px;
   width: 300px;
   margin-left: 170px;
-  top: 5%;
+  top: 15%;
   left: 50%;
 }
 
@@ -303,17 +303,15 @@ input {
   display: flex;
   position: absolute;
   width: 100%;
-  height: 15%;
   align-items: center;
   justify-content: center;
   text-align: center;
-  top: 15%;
+  margin-top:10%;
 }
 .text2 {
   display: flex;
   position: absolute;
   width: 98%;
-  height: 15%;
   align-items: center;
   text-align: center;
   top: 15%;
@@ -322,15 +320,12 @@ input {
 .text3 {
   display: flex;
   position: absolute;
-  width: 99%;
-  height: 15%;
   align-items: center;
   text-align: center;
-  top: 5%;
   left: 1%;
 }
 .veri {
-  border-top:5px solid #00FFFF;
+  border-top: 5px solid #00ffff;
   padding: 1%;
   flex-direction: row;
   background-color: white;
@@ -343,19 +338,17 @@ input {
   border-radius: 10px;
 }
 .veri2 {
-  border-top: 5px solid #FFA500;
+  border-top: 5px solid #ffa500;
   padding: 1%;
   flex-direction: column;
   background-color: white;
   display: flex;
-  position: absolute;
-  /* width: 40%; */
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 10px;
 }
-.data{
+.data {
   background-color: grey;
 }
 .chart {
@@ -372,8 +365,9 @@ input {
 .prog {
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 20%;
+  display: flex;
 }
 .progress1 {
   background: rgba(0, 0, 0, 0.1);
@@ -472,4 +466,82 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
   background: transparent;
   box-shadow: 0px 0px 0px 100vh #1f2739;
+}
+
+.svg-turkiye-haritasi {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top:2%;
+}
+.svg-turkiye-haritasi svg {
+  width: 100%;
+  height: auto;
+}
+.il-isimleri {
+  position: absolute;
+  z-index: 2;
+}
+.il-isimleri div {
+  font-family: "Open Sans";
+  display: inline-block;
+  background: #1f2739;
+  color: #fff;
+  padding: 8px 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#svg-turkiye-haritasi path {
+  cursor: pointer;
+  fill: rgb(61, 207, 252);
+}
+#svg-turkiye-haritasi path:hover {
+  fill: #1094f6;
+}
+li {
+  list-style-type: none;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  justify-content: space-around;
+  height: 1%;
+  color:white;
+  font-size: 1.5rem;
+  cursor:pointer;
+}
+
+.seperator{
+  cursor:default
+}
+
+.menu a {
+  position: relative;
+  text-decoration: none;
+}
+
+.menu a::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  background: #ff7000;
+  transition: transform 0.9s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.menu a:focus{
+  border-bottom: 3px solid #ff7000;
+  color: #ff7000;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+text{
+  user-select: none;
 }
