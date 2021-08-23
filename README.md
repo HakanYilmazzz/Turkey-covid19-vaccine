@@ -3,6 +3,7 @@ Türkiye aşılama son durumu hakkında bilgi
 
 # Yapılacaklar
 - [X] Alfabetik veya sayıya göre sıralama yapılacak.
+- [X] Veriler harita üzerinde de gösterilcecek.
 - [ ] Performans iyileştirmeleri yapılacak.
 - [ ] 1. Doza göre sıralamadaki hata giderilecek.
 - [X] Aşılamanın nüfusa oranı da eklenecek.
