@@ -38,6 +38,25 @@ h2 a {
   text-decoration: none;
 }
 
+@media (max-width:950px) {
+  .tablo {
+    flex-direction: column;
+  }
+  .left{
+    width: 100% !important;
+  }
+  .right{
+    width: 100% !important;
+  }
+  .data{
+    flex-direction: column !important;
+  }
+  .text{
+    font-size:medium;
+    width: 100% !important;
+  }
+}
+
 .blue {
   color: #185875;
 }
@@ -299,31 +318,28 @@ input {
   opacity: 1;
   visibility: visible;
 }
-.text {
+.data{
   display: flex;
-  position: absolute;
-  width: 100%;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+.column{
+  flex-direction: column;
+  
+}
+.text {
+  border-top: 5px solid #00ffff;
+  padding: 1%;
+  flex-direction: row;
+  background-color: white;
+  display: flex;
+  width: 40%;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top:10%;
+  border-radius: 10px;
 }
-.text2 {
-  display: flex;
-  position: absolute;
-  width: 98%;
-  align-items: center;
-  text-align: center;
-  top: 15%;
-  left: 2%;
-}
-.text3 {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  text-align: center;
-  left: 1%;
-}
+
 .veri {
   border-top: 5px solid #00ffff;
   padding: 1%;
@@ -348,9 +364,7 @@ input {
   text-align: center;
   border-radius: 10px;
 }
-.data {
-  background-color: grey;
-}
+
 .chart {
   background: rgba(255, 255, 255, 0.1);
   justify-content: flex-start;
@@ -366,7 +380,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20%;
+  padding-top: 2% !important;
   display: flex;
 }
 .progress1 {
