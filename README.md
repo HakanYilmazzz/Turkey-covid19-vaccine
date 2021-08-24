@@ -6,6 +6,7 @@ Türkiye aşılama son durumu hakkında bilgi
 - [X] Veriler harita üzerinde de gösterilcecek.
 - [ ] Performans iyileştirmeleri yapılacak.
 - [ ] 1. Doza göre sıralamadaki hata giderilecek.
+- [X] Mobil için responsive tasarım eklenecek.
 - [X] Aşılamanın nüfusa oranı da eklenecek.
 - [X] Günlük vaka verileri eklenecek.
 
