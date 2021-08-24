@@ -33,10 +33,10 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
       tr.append("<td>" + i + "</td>");
       tr.append("<td>" + JsonData[i].adi + "</td>");
       tr.append('<td id='+i+' >' + JsonData[i].toplam + "</td>");
-      tr.append('<td id='+i+' >' + JsonData[i].birinciDoz + "</td>");
-      tr.append('<td id='+i+' >' + JsonData[i].ikinciDoz + "</td>");
+      tr.append('<td id='+(i+82)+' >' + JsonData[i].birinciDoz + "</td>");
+      tr.append('<td id='+(i+163)+' >' + JsonData[i].ikinciDoz + "</td>");
       tr.append(
-        "<td>" +
+        '<td id='+(i+244)+'>' +
           (
             Number(JsonData[i].toplam.split(".").join("")) -
             Number(JsonData[i].birinciDoz.split(".").join("")) -
@@ -49,10 +49,17 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
 
       $("#myTable").append(tr);
       
-      for (var j=1;j<82;j++){
-        document.getElementById(''+i+'').setAttribute('data-sort','' + JsonData[i].toplam.split(".").join("")+ '');
+      document.getElementById(''+i+'').setAttribute('data-sort','' + JsonData[i].toplam.split(".").join("")+ '');
+      document.getElementById(''+(i+82)+'').setAttribute('data-sort','' + JsonData[i].birinciDoz.split(".").join("")+ '');
+      document.getElementById(''+(i+163)+'').setAttribute('data-sort','' + JsonData[i].ikinciDoz.split(".").join("")+ '');
+      document.getElementById(''+(i+244)+'').setAttribute('data-sort','' + (
+        Number(JsonData[i].toplam.split(".").join("")) -
+        Number(JsonData[i].birinciDoz.split(".").join("")) -
+        Number(JsonData[i].ikinciDoz.split(".").join(""))
+      )+ '');
+
       }
-      }
+      
     document.getElementById("toplam").innerText =
       GenelToplam.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
     document.getElementById("fdoz").innerText = fdoz
