@@ -3,7 +3,7 @@ Türkiye aşılama son durumu hakkında bilgi
 
 # Yapılacaklar
 - Alfabetik veya sayıya göre sıralama yapılacak. &#9745;
-- Veriler harita üzerinde de gösterilcecek.  &#9745;
+- Veriler harita üzerinde de gösterilecek.  &#9745;
 - Performans iyileştirmeleri yapılacak. 
 - Dozlara göre sıralamadaki hata giderilecek.  &#9745;
 - Mobil için responsive tasarım eklenecek.  &#9745;
