@@ -27,6 +27,8 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     document.querySelector("#poz").textContent = vakaDurum[25];
     document.querySelector("#dea").textContent = vakaDurum[41];
 
+
+
     var dataset = [...veri].map((m) => m.dataset);
     JsonData = JSON.parse(JSON.stringify(dataset));
     JsonData = { ...JsonData };
@@ -34,8 +36,8 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     var sayacMavi =0;
     var sayacKirmizi =0;
     var sayacTuruncu =0;
-
     for (var i = 1; i < 82; i++) {
+
       var tr;
       tr = $("<tr/>");
       tr.append("<td>" + i + "</td>");
@@ -57,7 +59,6 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     document.getElementById("kirmizi").innerHTML = sayacKirmizi;
     document.getElementById("turuncu").innerHTML = sayacTuruncu;
   
-
     document.getElementById("genelOran2").innerHTML =
       parseFloat(yuzdeGenel[39]) + "%";
     document.getElementById("progress-value2").style.width =

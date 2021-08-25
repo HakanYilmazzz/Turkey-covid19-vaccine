@@ -15,7 +15,7 @@ function svgturkiyeharitasi() {
         "<li>",
         "<br>",
         "<span style='font-weight:bold;color:#4dc3fa'>",
-        "Yüzde: ",
+        " 1.Doz Yüzdesi: ",
         "</span>",
         "<span style='font-weight:bold'>",
         JsonData[
