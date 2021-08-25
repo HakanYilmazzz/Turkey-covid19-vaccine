@@ -6,7 +6,7 @@ Veriler https://covid19asi.saglik.gov.tr/ sitesinden çekilmektedir. Herhangi bi
 - Alfabetik veya sayıya göre sıralama yapılacak. &#9745;
 - Veriler harita üzerinde de gösterilecek.  &#9745;
 - Performans iyileştirmeleri yapılacak. 
-- Dozlara göre sıralamadaki hata giderilecek.  &#9745;
+- Dozlara göre sıralamadaki hata giderilecek.  &#9745;   :x: İl bazlı doz bilgileri Sağlık bakanlığ tarafından artık paylaşılmıyor 
 - Mobil için responsive tasarım eklenecek.  &#9745;
 - Aşılamanın nüfusa oranı da eklenecek.  &#9745;
 - Günlük vaka verileri eklenecek.  &#9745;
