@@ -9,6 +9,23 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, "text/html");
     const veri = doc.getElementsByTagName("g");
+    const yuzdeVeri= doc.getElementsByTagName("script");
+
+    var yuzdeGenel = JSON.stringify(yuzdeVeri[18].innerHTML);
+    var vakaDurum = JSON.stringify(yuzdeVeri[26].innerHTML);
+
+    vakaDurum = vakaDurum.split('"');
+    yuzdeGenel = yuzdeGenel.split('=').join(';').split(';').join("''").split("'");
+
+    vakaDurum[4] = vakaDurum[4].slice(0, -1);
+    vakaDurum[8] = vakaDurum[8].slice(0, -1);
+    vakaDurum[12] = vakaDurum[12].slice(0, -1);
+    vakaDurum[20] = vakaDurum[20].slice(0, -1);
+ 
+    document.querySelector("#tarih").textContent = vakaDurum[4];   
+    document.querySelector("#test").textContent = vakaDurum[8];
+    document.querySelector("#poz").textContent = vakaDurum[12];
+    document.querySelector("#dea").textContent = vakaDurum[20];
 
     var dataset = [...veri].map((m) => m.dataset);
     JsonData = JSON.parse(JSON.stringify(dataset));
@@ -57,7 +74,6 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
         Number(JsonData[i].birinciDoz.split(".").join("")) -
         Number(JsonData[i].ikinciDoz.split(".").join(""))
       )+ '');
-
       }
       
     document.getElementById("toplam").innerText =
@@ -74,6 +90,9 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
     var yuzde = ((sdoz / 83614362) * 100).toFixed(1);
     document.getElementById("genelOran").innerHTML = yuzde + "%";
     document.getElementById("progress-value1").style.width = yuzde + "%";
+
+    document.getElementById("genelOran2").innerHTML = parseInt(yuzdeGenel[39]) + "%";
+    document.getElementById("progress-value2").style.width = parseInt(yuzdeGenel[39]) + "%";
     var count = 1;
     
     for (var i = 83; i < 164; i++) {
@@ -94,25 +113,4 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
   .catch(function (err) {
     console.warn("Something went wrong.", err);
   });
-fetch(
-  "https://cors.bridged.cc/https://covid19.saglik.gov.tr/TR-66935/genel-koronavirus-tablosu.html#"
-)
-  .then((res) => res.text())
-  .then((textResponse) => {
-    var parser = new DOMParser();
-    var doc = parser.parseFromString(textResponse, "text/html");
-    const veri = doc.getElementsByTagName("script");
-    var genel = JSON.stringify(veri[16].innerHTML);
-    genel = genel.split('"');
-    
-   genel[4] = genel[4].slice(0, -1);
-   genel[8] = genel[8].slice(0, -1);
-   genel[12] = genel[12].slice(0, -1);
-   genel[20] = genel[20].slice(0, -1);
 
-    document.querySelector("#tarih").textContent = genel[4];   
-    document.querySelector("#test").textContent = genel[8];
-    document.querySelector("#poz").textContent = genel[12];
-    document.querySelector("#dea").textContent = genel[20];
-
-  });
