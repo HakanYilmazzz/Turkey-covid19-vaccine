@@ -15,50 +15,12 @@ function svgturkiyeharitasi() {
         "<li>",
         "<br>",
         "<span style='font-weight:bold;color:#4dc3fa'>",
-        "Toplam: ",
+        "Yüzde: ",
         "</span>",
         "<span style='font-weight:bold'>",
         JsonData[
           parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)
-        ].toplam,
-        "</span>",
-        "</li>",
-        "<br>",
-        "<li>",
-        "<span style='font-weight:bold;color:#4dc3fa'>",
-        "1. Doz: ",
-        "</span>",
-        "<span style='font-weight:bold'>",
-        JsonData[
-          parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)
-        ].birinciDoz,
-        "</span>",
-        "</li>",
-        "<br>",
-        "<li>",
-        "<span style='font-weight:bold;color:#4dc3fa'>",
-        "2. Doz: ",
-        "</span>",
-        "<span style='font-weight:bold'>",      
-        JsonData[
-          parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)
-        ].ikinciDoz,
-        "</span>",
-        "</li>",
-        "<br>",
-        "<li>",
-        "<span style='font-weight:bold;color:#4dc3fa'>",
-        "3. Doz: ",
-        "</span>",
-        "<span style='font-weight:bold'>",
-          (
-            Number(JsonData[parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)].toplam.split(".").join("")) -
-            Number(JsonData[parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)].birinciDoz.split(".").join("")) -
-            Number(JsonData[parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)].ikinciDoz.split(".").join(""))
-          )
-            .toString()
-            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1."),
-        
+        ].yuzde,
         "</span>",
         "</li>",
         "</div>",

@@ -21,22 +21,26 @@
 
 <body>
     <div id="app">
+        <a id="button"></a>
         <nav class="menu">
-            <a class="tablo" onclick="tablo()"><span id="tableText">Tablo Görünümü</span> </a>
+            <a class="tablo" ><span id="tableText" onclick="tablo()">Tablo Görünümü</span> </a>
             <div class="seperator"> | </div>
-            <a class="harita" onclick="harita()"><span id="mapText">Harita Görünümü</span> </a>
+            <a class="harita" ><span id="mapText" onclick="harita()">Harita Görünümü</span> </a>
         </nav>
-        <!-- Search  -->
-        <!-- <form id="content">
-            <a id="button"></a>
-            <input type="text" name="input" class="input" id="myInput" onkeyup="myFunction()"
-                onfocus="this.placeholder = 'Sehir Ara'" onblur="this.placeholder = ''">
-            <button type="reset" class="search" id="search-btn"></button>
-        </form> -->
         <!-- Sayılar -->
         <div class="data" id="data">
+            <div class="illerDiv">
+                <span><span style="color:blue">Mavi</span> il sayısı: <span id="mavi"></span></span> 
+                <span><span style="color:orange">Turuncu</span> il sayısı: <span id="turuncu"></span></span> 
+                <span><span style="color:red">Kırmızı</span> il sayısı: <span id="kirmizi"></span></span> 
+             </div>
+            <div style="flex-direction: column;display: flex;align-items: center;">
+            <div class="text3" style="margin-bottom: 1%;">
+                <span style="font-weight:bold"> Son Güncelleme Saati: </span>
+                <span id="tarihAsi" style="font-weight:bold"> </span>
+            </div>
             <div class="text">
-                <!-- <div class="veri"> -->
+                
                 <div style="flex-direction: column;border-right: 1px solid blue;">
                     <span style="color:rgb(245, 17, 66);font-weight:bold">Toplam yapılan aşı sayısı</span>
                     <hr style="width: 90%;">
@@ -58,11 +62,12 @@
                     <span id="tdoz" style="color:blue;font-weight:bold"></span>
                 </div>
 
-                <!-- </div> -->
+                
 
             </div>
+        </div>
             <div class="column">
-                <div class="text3">
+                <div class="text3" style="margin-bottom: 5%;">
                     <span style="font-weight:bold">Güncelleme Tarihi: </span>
                     <span id="tarih" style="font-weight:bold"> </span>
                 </div>
@@ -86,15 +91,7 @@
                 </div>
             </div>
         </div>
-        <!-- Progress Bar -->
-        <div class="prog" id="prog">
-            <h3>Türkiye Geneli Aşılama Oranı<sup style="font-size: 10px;"> 2 Doz aşılanmış kişiler</sup></h3>
-            <div class="progress1">
-                <div class="progress-value1" id="progress-value1"><span id="genelOran"></span></div>
-                <span title="Toplumsal Bağışıklık Yüzdesi: %60"
-                    style="left:60%;display: list-item;position:absolute;color:white;cursor:help"></span>
-            </div>
-        </div>
+        
          <!-- Progress Bar 2-->
 
         <div class="prog" id="prog">
@@ -105,26 +102,9 @@
                     style="left:60%;display: list-item;position:absolute;color:white;cursor:help"></span>
             </div>
         </div>
-        <!-- Tablolar -->
-        <div class="tablo" id="tablo">
-            <div class="left">
-                <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Sayısı
-                        </pan>
-                </h1>
-                <table id="myTable" class="sortable" cellpadding="0" cellspacing="0">
-                    <thead class="table-header">
-                        <tr>
-                            <th>Plaka</th>
-                            <th>İl</th>
-                            <th>Toplam</th>
-                            <th>1. Doz</th>
-                            <th>2. Doz</th>
-                            <th>3. Doz</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-            </div>
+        <!-- Tablo -->
+        <div class="tablo" id="tablo" style="justify-content: space-around;">
+            
             <div class="right">
                 <h1><span class="blue">&lt;</span>Aşılama 💉<span class="blue">&gt;</span> <span class="yellow">Oranı
                         </pan>
@@ -609,7 +589,6 @@
 <script>
     var tabl = document.getElementById("tablo");
     var maps = document.getElementById("harita");
-    //var search = document.getElementById("content");
     var data = document.getElementById("data");
     var progress = document.getElementById("prog");
     var tablText = document.getElementById("tableText");
@@ -618,13 +597,11 @@
     mapText.style.color = "orange"
     tabl.style.display = "none";
     tabl.style.textDecoration = "none";
-    //search.style.display = "none";
     data.style.display = "none";
     progress.style.paddingTop = 0;
     function tablo() {
         maps.style.display = "none";
         tabl.style.display = "flex";
-        //search.style.display="flex";
         data.style.display = "flex";
         progress.style.paddingTop = "20%";
         mapText.style.color = "white"
@@ -633,7 +610,6 @@
     function harita() {
         maps.style.display = "block";
         tabl.style.display = "none";
-        //search.style.display = "none";
         tabl.style.textDecoration = "none"
         data.style.display = "none";
         progress.style.paddingTop = 0;
@@ -641,33 +617,7 @@
         tablText.style.color = "white"
 
     }
-    // function myFunction() {
-    //     var input, filter, table, tr, td, i, txtValue;
-    //     input = document.getElementById("myInput");
-    //     filter = input.value.toUpperCase();
-    //     table = document.getElementById("myTable");
-    //     tr = table.getElementsByTagName("tr");
-    //     for (i = 0; i < tr.length; i++) {
-    //         td = tr[i].getElementsByTagName("td")[1];
-    //         if (td) {
-    //             txtValue = td.textContent || td.innerText;
-    //             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-    //                 tr[i].style.display = "";
-    //             } else {
-    //                 tr[i].style.display = "none";
-    //             }
-    //         }
-    //     }
-    // }
-    // const input = document.getElementById("myInput");
-    // const searchBtn = document.getElementById("search-btn");
-
-    // const expand = () => {
-    //     searchBtn.classList.toggle("close");
-    //     input.classList.toggle("square");
-    // };
-
-    // searchBtn.addEventListener("click", expand);
+    
     var btn = $('#button');
 
     $(window).scroll(function () {
