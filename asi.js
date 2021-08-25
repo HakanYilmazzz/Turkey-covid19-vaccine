@@ -91,8 +91,8 @@ fetch("https://cors.bridged.cc/https://covid19asi.saglik.gov.tr", {
     document.getElementById("genelOran").innerHTML = yuzde + "%";
     document.getElementById("progress-value1").style.width = yuzde + "%";
 
-    document.getElementById("genelOran2").innerHTML = parseInt(yuzdeGenel[39]) + "%";
-    document.getElementById("progress-value2").style.width = parseInt(yuzdeGenel[39]) + "%";
+    document.getElementById("genelOran2").innerHTML = parseFloat(yuzdeGenel[39]) + "%";
+    document.getElementById("progress-value2").style.width = parseFloat(yuzdeGenel[39]) + "%";
     var count = 1;
     
     for (var i = 83; i < 164; i++) {
