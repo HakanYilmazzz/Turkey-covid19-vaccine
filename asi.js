@@ -32,7 +32,6 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     JsonData = JSON.parse(JSON.stringify(dataset));
     JsonData = { ...JsonData };
     delete JsonData[0];
-    console.log(dataset)
     var sayacMavi =0;
     var sayacKirmizi =0;
     var sayacTuruncu =0;
