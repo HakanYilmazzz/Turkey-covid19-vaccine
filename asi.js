@@ -15,7 +15,6 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     var vakaDurum = JSON.stringify(yuzdeVeri[22].innerHTML);
     vakaDurum = vakaDurum.split('"').join("\\").split("\\");
     yuzdeGenel = yuzdeGenel.split("=").join(";").split(";").join("''").split("'");
-
     document.querySelector("#fdoz").textContent = yuzdeGenel[3];
     document.querySelector("#sdoz").textContent = yuzdeGenel[9];
     document.querySelector("#tdoz").textContent = yuzdeGenel[15];
@@ -33,12 +32,13 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     JsonData = JSON.parse(JSON.stringify(dataset));
     JsonData = { ...JsonData };
     delete JsonData[0];
+    console.log(dataset)
     var sayacMavi =0;
     var sayacKirmizi =0;
     var sayacTuruncu =0;
+    var tr;
     for (var i = 1; i < 82; i++) {
 
-      var tr;
       tr = $("<tr/>");
       tr.append("<td>" + i + "</td>");
       tr.append("<td>" + JsonData[i].adi + "</td>");
@@ -46,6 +46,8 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
         sayacKirmizi++;
         tr.append("<td style='color:#f22536'>" + JsonData[i].yuzde + "</td>");
       } else if (JsonData[i].yuzde > "% 75") {
+        //document.querySelector("[data-adi='JsonData[i].adi']").setAttr("style", "color:red !important");
+
         sayacMavi++;
         tr.append("<td style='color:#4dc3fa'>" + JsonData[i].yuzde + "</td>");
       } else {

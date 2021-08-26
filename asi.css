@@ -293,12 +293,12 @@ h2 a {
   width: 99%;
 }
 
-
 .progress-value2 {
   animation: load 3s normal forwards;
   box-shadow: 0 10px 40px -10px #fff;
   border-radius: 100px;
-  background: #e03c83;
+  background: -webkit-linear-gradient(to right, #834d9b, #d04ed6);
+  background: linear-gradient(to right, #834d9b, #d04ed6); 
   height: 30px;
   width: 0;
 }
@@ -308,6 +308,7 @@ h2 a {
   font-size: 14px;
   text-align: center;
   display: block;
+  font-weight: bold;
 }
 @keyframes load {
   0% {
@@ -385,6 +386,7 @@ html::-webkit-scrollbar-thumb {
   margin: 0 auto;
   text-align: center;
   margin-top:2%;
+  font-size: 12px;
 }
 .svg-turkiye-haritasi svg {
   width: 100%;
@@ -393,6 +395,7 @@ html::-webkit-scrollbar-thumb {
 .il-isimleri {
   position: absolute;
   z-index: 2;
+  
 }
 .il-isimleri div {
   font-family: "Open Sans";
