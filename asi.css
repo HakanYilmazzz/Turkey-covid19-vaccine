@@ -409,7 +409,7 @@ html::-webkit-scrollbar-thumb {
 }
 #svg-turkiye-haritasi path {
   cursor: pointer;
-  fill: rgb(61, 207, 252);
+  /* fill: rgb(61, 207, 252); */
 }
 #svg-turkiye-haritasi path:hover {
   fill: #1094f6;

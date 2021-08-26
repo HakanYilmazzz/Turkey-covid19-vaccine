@@ -35,23 +35,34 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     var sayacMavi =0;
     var sayacKirmizi =0;
     var sayacTuruncu =0;
-    var tr;
+    var sayacSari=0;
+    var tr,element;
     for (var i = 1; i < 82; i++) {
-
+      
       tr = $("<tr/>");
       tr.append("<td>" + i + "</td>");
       tr.append("<td>" + JsonData[i].adi + "</td>");
-      if (JsonData[i].yuzde < "% 55") {
+      if (JsonData[i].yuzde < "% 55.0") {
+        element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
+        element.style.fill = "red";
         sayacKirmizi++;
         tr.append("<td style='color:#f22536'>" + JsonData[i].yuzde + "</td>");
-      } else if (JsonData[i].yuzde > "% 75") {
-        //document.querySelector("[data-adi='JsonData[i].adi']").setAttr("style", "color:red !important");
-
+      } else if (JsonData[i].yuzde >= "% 75.0") {
+        element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
+        element.style.fill = "blue ";
         sayacMavi++;
         tr.append("<td style='color:#4dc3fa'>" + JsonData[i].yuzde + "</td>");
-      } else {
+      } else if(JsonData[i].yuzde >= "% 55.0" && JsonData[i].yuzde <= "% 65.0"){
+        element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
+        element.style.fill = "orange";
         sayacTuruncu++;
         tr.append("<td style='color:#ea8421'>" + JsonData[i].yuzde + "</td>");
+      }else{
+        element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
+        element.style.fill = "yellow";
+        sayacSari++;
+        tr.append("<td style='color:yellow'>" + JsonData[i].yuzde + "</td>");
+
       }
 
       $("#myTable2").append(tr);
@@ -59,7 +70,9 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     document.getElementById("mavi").innerHTML = sayacMavi;
     document.getElementById("kirmizi").innerHTML = sayacKirmizi;
     document.getElementById("turuncu").innerHTML = sayacTuruncu;
-  
+    document.getElementById("sari").innerHTML = sayacSari;
+
+    
     document.getElementById("genelOran2").innerHTML =
       parseFloat(yuzdeGenel[39]) + "%";
     document.getElementById("progress-value2").style.width =
