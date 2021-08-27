@@ -1,6 +1,6 @@
 # Turkey-covid19-vaccine
 Türkiye aşılama son durumu hakkında bilgi
-Veriler https://covid19asi.saglik.gov.tr/ sitesinden çekilmektedir. Herhangi bir ticari amacı olmamakla beraber olası bir ticari işlem için öncelikle sagliklicozum@saglik.gov.tr adresinden mail ile izin alınmalıdır.
+Veriler https://covid19.saglik.gov.tr/ sitesinden çekilmektedir. Herhangi bir ticari amacı olmamakla beraber olası bir ticari işlem için öncelikle sagliklicozum@saglik.gov.tr adresinden mail ile izin alınmalıdır.
 
 # Yapılacaklar
 - Alfabetik veya sayıya göre sıralama yapılacak. &#9745;
@@ -10,7 +10,7 @@ Veriler https://covid19asi.saglik.gov.tr/ sitesinden çekilmektedir. Herhangi bi
 - Mobil için responsive tasarım eklenecek.  &#9745;
 - Aşılamanın nüfusa oranı da eklenecek.  &#9745;
 - Günlük vaka verileri eklenecek.  &#9745;
-- Harita dataları düzeltilecek.
+- Harita dataları düzeltilecek.  &#9745;
 
 # Ekran Görüntüsü
 Harita
