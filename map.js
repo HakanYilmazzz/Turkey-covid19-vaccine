@@ -12,17 +12,15 @@ function svgturkiyeharitasi() {
         '<span style="font-weight:bold;border-bottom:1px solid #00ffff;padding-bottom:2px;color:#fb667a">',
         event.target.parentNode.getAttribute("data-iladi"),
         "</span>",
-        // "<li>",
-        // "<br>",
-        // "<span style='font-weight:bold;color:#4dc3fa'>",
-        // " 1.Doz Yüzdesi: ",
-        // "</span>",
-        // "<span style='font-weight:bold'>",
-        // JsonData[
-        //   parseInt(event.target.parentNode.getAttribute("data-plakakodu"), 10)
-        // ].yuzde,
-        // "</span>",
-        // "</li>",
+        "<li>",
+        "<br>",
+        "<span style='font-weight:bold;color:#4dc3fa'>",
+        " 1.Doz Yüzdesi: ",
+        "</span>",
+        "<span style='font-weight:bold'>",
+        document.querySelector('[data-iladi='+event.target.parentNode.getAttribute("data-iladi")+'] > span').innerHTML,
+        "</span>",
+        "</li>",
         "</div>",
       ].join("");
     }

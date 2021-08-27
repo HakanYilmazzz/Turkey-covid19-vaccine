@@ -26,8 +26,6 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     document.querySelector("#poz").textContent = vakaDurum[25];
     document.querySelector("#dea").textContent = vakaDurum[41];
 
-
-
     var dataset = [...veri].map((m) => m.dataset);
     JsonData = JSON.parse(JSON.stringify(dataset));
     JsonData = { ...JsonData };
@@ -45,21 +43,33 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
       if (JsonData[i].yuzde < "% 55.0") {
         element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
         element.style.fill = "red";
+        let div = document.createElement('span');
+        div.innerHTML = JsonData[i].yuzde;
+        element.append(div)
         sayacKirmizi++;
         tr.append("<td style='color:#f22536'>" + JsonData[i].yuzde + "</td>");
       } else if (JsonData[i].yuzde >= "% 75.0") {
         element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
         element.style.fill = "blue ";
+        let div = document.createElement('span');
+        div.innerHTML = JsonData[i].yuzde;
+        element.append(div)
         sayacMavi++;
         tr.append("<td style='color:#4dc3fa'>" + JsonData[i].yuzde + "</td>");
       } else if(JsonData[i].yuzde >= "% 55.0" && JsonData[i].yuzde <= "% 65.0"){
         element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
         element.style.fill = "orange";
+        let div = document.createElement('span');
+        div.innerHTML = JsonData[i].yuzde;
+        element.append(div)
         sayacTuruncu++;
         tr.append("<td style='color:#ea8421'>" + JsonData[i].yuzde + "</td>");
       }else{
         element  = document.querySelector('[data-iladi='+JsonData[i].adi+']');
-        element.style.fill = "yellow";
+        element.style.fill = "#e6e600";
+        let div = document.createElement('span');
+        div.innerHTML = JsonData[i].yuzde;
+        element.append(div)
         sayacSari++;
         tr.append("<td style='color:yellow'>" + JsonData[i].yuzde + "</td>");
 
