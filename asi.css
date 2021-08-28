@@ -148,6 +148,9 @@ h2 a {
     position: inherit !important;
     left: inherit !important;
   }
+  .left1{
+    width: 100% !important;
+  }
   .right{
     width: 100% !important;
   }
@@ -289,6 +292,9 @@ h2 a {
   display: flex;
   position: absolute;
   left: 1%;
+}
+.left1{
+  width: 50%;
 }
 .right {
   width: 60%;

@@ -30,11 +30,13 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     JsonData = JSON.parse(JSON.stringify(dataset));
     JsonData = { ...JsonData };
     delete JsonData[0];
+    console.log(JsonData)
     var sayacMavi =0;
     var sayacKirmizi =0;
     var sayacTuruncu =0;
     var sayacSari=0;
     var tr,element;
+    var sira=1;
     for (var i = 1; i < 82; i++) {
       
       tr = $("<tr/>");
@@ -76,6 +78,15 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
       }
 
       $("#myTable2").append(tr);
+    }
+    for(var k=83;k<164;k++){
+      tr = $("<tr/>");
+      tr.append("<td>" + sira + "</td>");
+      tr.append("<td>" + JsonData[k].adi + "</td>");
+      tr.append('<td id='+k+' >' + JsonData[k].detay + "</td>");
+      $("#myTable").append(tr);
+      sira++;
+      document.getElementById(''+k+'').setAttribute('data-sort','' + JsonData[k].detay.split(",").join("")+ '');
     }
     document.getElementById("mavi").innerHTML = sayacMavi;
     document.getElementById("kirmizi").innerHTML = sayacKirmizi;
