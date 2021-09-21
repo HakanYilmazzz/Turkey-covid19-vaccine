@@ -15,7 +15,7 @@ function svgturkiyeharitasi() {
         "<li>",
         "<br>",
         "<span style='font-weight:bold;color:#4dc3fa'>",
-        " 1.Doz Yüzdesi: ",
+        " 2.Doz Yüzdesi: ",
         "</span>",
         "<span style='font-weight:bold'>",
         document.querySelector('[data-iladi='+event.target.parentNode.getAttribute("data-iladi")+'] > span').innerHTML,

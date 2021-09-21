@@ -12,14 +12,15 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     const yuzdeVeri = doc.getElementsByTagName("script");
 
     var yuzdeGenel = JSON.stringify(yuzdeVeri[12].innerHTML);
-    var vakaDurum = JSON.stringify(yuzdeVeri[22].innerHTML);
+    var vakaDurum = JSON.stringify(yuzdeVeri[25].innerHTML);
     vakaDurum = vakaDurum.split('"').join("\\").split("\\");
     yuzdeGenel = yuzdeGenel.split("=").join(";").split(";").join("''").split("'");
+    console.log(yuzdeGenel)
     document.querySelector("#fdoz").textContent = yuzdeGenel[3];
     document.querySelector("#sdoz").textContent = yuzdeGenel[9];
     document.querySelector("#tdoz").textContent = yuzdeGenel[15];
-    document.querySelector("#toplam").textContent = yuzdeGenel[21];
-    document.querySelector("#tarihAsi").textContent = yuzdeGenel[45];
+    document.querySelector("#toplam").textContent = yuzdeGenel[27];
+    document.querySelector("#tarihAsi").textContent = yuzdeGenel[63];
 
     document.querySelector("#tarih").textContent = vakaDurum[9];
     document.querySelector("#test").textContent = vakaDurum[17];
@@ -79,7 +80,7 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
 
       $("#myTable2").append(tr);
     }
-    for(var k=83;k<164;k++){
+    for(var k=165;k<246;k++){
       tr = $("<tr/>");
       tr.append("<td>" + sira + "</td>");
       tr.append("<td>" + JsonData[k].adi + "</td>");
@@ -95,9 +96,9 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
 
     
     document.getElementById("genelOran2").innerHTML =
-      parseFloat(yuzdeGenel[39]) + "%";
+      parseFloat(yuzdeGenel[45]) + "%";
     document.getElementById("progress-value2").style.width =
-      parseFloat(yuzdeGenel[39]) + "%";
+      parseFloat(yuzdeGenel[45]) + "%";
   })
   .catch(function (err) {
     console.warn("Something went wrong.", err);
