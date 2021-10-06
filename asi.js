@@ -10,12 +10,12 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     var doc = parser.parseFromString(html, "text/html");
     const veri = doc.getElementsByTagName("g");
     const yuzdeVeri = doc.getElementsByTagName("script");
-
+    // console.log(yuzdeVeri)
     var yuzdeGenel = JSON.stringify(yuzdeVeri[12].innerHTML);
-    var vakaDurum = JSON.stringify(yuzdeVeri[25].innerHTML);
+    var vakaDurum = JSON.stringify(yuzdeVeri[23].innerHTML);
     vakaDurum = vakaDurum.split('"').join("\\").split("\\");
     yuzdeGenel = yuzdeGenel.split("=").join(";").split(";").join("''").split("'");
-    console.log(yuzdeGenel)
+    // console.log(yuzdeGenel)
     document.querySelector("#fdoz").textContent = yuzdeGenel[3];
     document.querySelector("#sdoz").textContent = yuzdeGenel[9];
     document.querySelector("#tdoz").textContent = yuzdeGenel[15];
@@ -80,7 +80,7 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
 
       $("#myTable2").append(tr);
     }
-    for(var k=165;k<246;k++){
+    for(var k=83;k<164;k++){
       tr = $("<tr/>");
       tr.append("<td>" + sira + "</td>");
       tr.append("<td>" + JsonData[k].adi + "</td>");
