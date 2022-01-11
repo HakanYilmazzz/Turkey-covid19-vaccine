@@ -1,4 +1,4 @@
-fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
+fetch("https://api.allorigins.win/get?url=https://covid19.saglik.gov.tr", {
   method: "GET",
   credentials: "same-origin",
 })
@@ -15,23 +15,23 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     var vakaDurum = JSON.stringify(yuzdeVeri[23].innerHTML);
     vakaDurum = vakaDurum.split('"').join("\\").split("\\");
     yuzdeGenel = yuzdeGenel.split("=").join(";").split(";").join("''").split("'");
-    // console.log(yuzdeGenel)
+     console.log(vakaDurum)
     document.querySelector("#fdoz").textContent = yuzdeGenel[3];
     document.querySelector("#sdoz").textContent = yuzdeGenel[9];
     document.querySelector("#tdoz").textContent = yuzdeGenel[15];
     document.querySelector("#toplam").textContent = yuzdeGenel[27];
     document.querySelector("#tarihAsi").textContent = yuzdeGenel[63];
 
-    document.querySelector("#tarih").textContent = vakaDurum[9];
-    document.querySelector("#test").textContent = vakaDurum[17];
-    document.querySelector("#poz").textContent = vakaDurum[25];
-    document.querySelector("#dea").textContent = vakaDurum[41];
+    document.querySelector("#tarih").textContent = vakaDurum[21];
+    document.querySelector("#test").textContent = vakaDurum[37];
+    document.querySelector("#poz").textContent = vakaDurum[53];
+    document.querySelector("#dea").textContent = vakaDurum[85];
 
     var dataset = [...veri].map((m) => m.dataset);
     JsonData = JSON.parse(JSON.stringify(dataset));
     JsonData = { ...JsonData };
     delete JsonData[0];
-    console.log(JsonData)
+    // console.log(JsonData)
     var sayacMavi =0;
     var sayacKirmizi =0;
     var sayacTuruncu =0;
@@ -83,8 +83,8 @@ fetch("https://cors.bridged.cc/https://covid19.saglik.gov.tr", {
     for(var k=83;k<164;k++){
       tr = $("<tr/>");
       tr.append("<td>" + sira + "</td>");
-      tr.append("<td>" + JsonData[k].adi + "</td>");
-      tr.append('<td id='+k+' >' + JsonData[k].detay + "</td>");
+      tr.append("<td>" + JsonData[k].adi.split('\\').join('').split('"').join('') + "</td>");
+      tr.append('<td id='+k+' >' + JsonData[k].detay.split('\\').join('').split('"').join('').split('n').join('') + "</td>");
       $("#myTable").append(tr);
       sira++;
       document.getElementById(''+k+'').setAttribute('data-sort','' + JsonData[k].detay.split(",").join("")+ '');
